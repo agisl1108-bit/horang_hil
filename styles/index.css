@@ -151,57 +151,112 @@
     border-radius:12px;
     font-size:0.88rem;
 }
-/* ---------------------------------------------------------------------2. 소개 */
-#wrap main #introduction {
-    max-width:1230px;
-    margin:0 auto;
-    padding:70px 0;
+/* ---------------------------------------------------------------------2. 양림동 호랑가시나무 소개 */
+#wrap main #intro_guest_bg {
+    background-color:#f5f5f5;
 }
-#wrap main #introduction .text_area {
-    margin-bottom:30px;
+#wrap main #intro_guest_bg #intro_guest {}
+#wrap main #intro_guest_bg #intro_guest h1 {}
+#wrap main #intro_guest_bg #intro_guest p {} /* 공통 */
+#wrap main #intro_guest_bg #intro_guest h1+p {}
+#wrap main #intro_guest_bg #intro_guest p:last-child {}
+#wrap main #intro_guest_bg #intro_guest p:last-child img {width:100%;}
+/* ----------------------------------------------------------------------------3. 관광지 소개 */
+#wrap main #intro_tourist {}
+#wrap main #intro_tourist h1 {}
+#wrap main #intro_tourist p {}
+#wrap main #intro_tourist .contents {
+    display:flex; flex-flow:row nowrap; /* 메인축정렬 */
+    justify-content:space-between;
+    margin:0 0 50px;/* ul + a 여백 */
 }
-#wrap main #introduction .text_area h2 {
-    font-size:1.50rem;
-    font-weight:500;
-    margin:30px auto;
-
+#wrap main #intro_tourist .contents li {
+    width:calc((100% - 60px) / 4);
+    /* width:calc((100% - (20px * 3)) / 4); */
 }
-#wrap main #introduction .text_area p {
+#wrap main #intro_tourist .contents li a {
+    margin:0 0 10px; display:block;
+    overflow:hidden; height:250px;
+}
+#wrap main #intro_tourist .contents li a img {width:100%;}
+#wrap main #intro_tourist .contents li a:hover img {width:120%;}
+#wrap main #intro_tourist .contents li h2 {
+    font-size:1.13rem; font-weight:600;
+}
+#wrap main #intro_tourist .more {
     font-size:0.94rem;
-    color:#555;
-    line-height:170%;
+    margin:0 auto;
+    display:block; width:max-content;
+    /* text-decoration:underline; 밑줄과 글자사이 여백불가능 */
+    border-bottom:1px solid #000;
 }
-#wrap main #introduction .introduction_image {
+/* -------------------------------------------------------------------------------4. 객실 및 예약안내 */
+#wrap main #room_info_bg {background-color:#f5f5f5; width:100%;}
+#wrap main #room_info_bg #room_info {}
+#wrap main #room_info_bg #room_info h1 {}
+#wrap main #room_info_bg #room_info p {}
+#wrap main #room_info_bg #room_info .room {
     display:flex; flex-flow:row nowrap;
-    justify-content:center;
+    justify-content:space-between; align-items:baseline;
+    margin:0 0 50px;
+    overflow: visible;
 }
-#wrap main #nearby_attractions {
-    max-width:1230px;
-    margin:0 auto;
-    padding:70px 0;
+#wrap main #room_info_bg #room_info .room li {
+    transition:transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.35s ease;
+    transform-origin:center center; /* 가운데서 커지게 */
 }
-#wrap main #nearby_attractions .text_area {margin-bottom:30px;}
-#wrap main #nearby_attractions .text_area h2 {
-    font-size:1.50rem;
-    font-weight:500;
-    margin:30px auto
-}
-#wrap main #nearby_attractions .text_area p {
+#wrap main #room_info_bg #room_info .room li a {}
+#wrap main #room_info_bg #room_info .room li a img {width:100%;}
+#wrap main #room_info_bg #room_info .room li h2 {font-size:1.13rem; font-weight:600; margin:12px auto;}
+#wrap main #room_info_bg #room_info .room li p {font-size:0.88rem; line-height:1.7; color:#555;}
+#wrap main #room_info_bg #room_info .realtime {
     font-size:0.94rem;
-    color:#555;
+    margin:0 auto;
+    display:block; width:max-content;
+    border-bottom:1px solid #000;
 }
-#wrap main #nearby_attractions .nearby {
+#wrap main #room_info_bg #room_info .room li:hover {
+transform:scale(1.06);
+    z-index:5;
+    box-shadow:0 14px 32px rgba(0,0,0,0.18);
+    }
+/* --------------------------------------------------------------------------------------------5. 게스트 하우스 찾아오는 길 */
+#wrap main #directions {}
+#wrap main #directions .directions_top {
     display:flex; flex-flow:row nowrap;
     justify-content:space-between;
 }
-#wrap main #nearby_attractions .nearby li {
-    width:calc(1230px / 4); 
+#wrap main #directions .directions_top h1 {}
+#wrap main #directions .directions_top p {font-size:1.00rem; color:#000;}
+#wrap main #directions p {}
+#wrap main #directions p img {width:100%;}
+#wrap main #directions .directions_info {}
+/* ------------------------------------------------------------------------------------------------공통 */
+#wrap main #directions .directions_info .info_block_bus h2,
+#wrap main #directions .directions_info .info_block_subway h2 {
+    font-size:1.50rem; 
+    font-weight:700; 
+    color:#555; 
+    margin:20px auto;
 }
-#wrap main #nearby_attractions .nearby li a {}
-#wrap main #nearby_attractions .nearby li a img {margin:10px 0;}
-#wrap main #nearby_attractions .nearby li a span {}
-#wrap main #nearby_attractions .more_link {
-    display:flex; flex-flow:row nowrap;
-    justify-content:center;
-    padding:80px 0;
+#wrap main #directions .directions_info .info_block_bus .info_list li span,
+#wrap main #directions .directions_info .info_block_subway .info_list li span {
+    font-size:0.94rem;
+    color:#555;
+    line-height:1.8;
+    display: block;
 }
+
+/* -----------------------------------------------------------------------------------------버스 */
+#wrap main #directions .directions_info .info_block_bus {margin:30px auto;}
+#wrap main #directions .directions_info .info_block_bus h2 {}
+#wrap main #directions .directions_info .info_block_bus .info_list {}
+#wrap main #directions .directions_info .info_block_bus .info_list li {margin-bottom: 16px;}
+#wrap main #directions .directions_info .info_block_bus .info_list li span {}
+/* ------------------------------------------------------------------------------------------지하철 */
+#wrap main #directions .directions_info .info_block_subway {}
+#wrap main #directions .directions_info .info_block_subway h2 {}
+#wrap main #directions .directions_info .info_block_subway .info_list {}
+#wrap main #directions .directions_info .info_block_subway .info_list li {}
+#wrap main #directions .directions_info .info_block_subway .info_list li span {}
